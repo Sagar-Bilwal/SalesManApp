@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="admin">Admin</string>
+    <string name="user">User</string>
+    <string name="enter_sign_password_to_signup_as_admin">ENTER SIGN PASSWORD TO SIGNUP AS ADMIN.</string>
+    <string name="or">OR</string>
+    <string name="confirm_password">Confirm Password</string>
+</resources>

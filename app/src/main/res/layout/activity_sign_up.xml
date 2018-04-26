@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/signUp_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sagar.myapplication.UserType">
+
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sagar.myapplication.UserType">
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/admin"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="256dp"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:shadowColor="@color/backgroundBlack"
+        android:text="@string/admin"
+        android:textColor="@color/backgroundBlack"
+        android:textSize="20sp"
+        app:cornerRadius="4dp"
+        app:fButtonColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/password"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/backgroundBlack"
+        android:textColorHint="@color/backgroundBlack"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/admin"
+        app:layout_constraintEnd_toEndOf="@+id/admin"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="@+id/admin"
+        app:met_baseColor="@color/backgroundBlack"
+        app:met_floatingLabel="highlight"
+        app:met_primaryColor="@color/backgroundBlack"
+        app:met_singleLineEllipsis="true"
+        app:met_textColorHint="@color/backgroundBlack" />
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/user"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:shadowColor="@color/backgroundBlack"
+        android:text="@string/user"
+        android:textColor="@color/backgroundBlack"
+        android:textSize="20sp"
+        app:cornerRadius="4dp"
+        app:fButtonColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/admin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/admin"
+        app:layout_constraintTop_toBottomOf="@+id/admin"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:padding="2dp"
+        android:text="@string/or"
+        android:textColor="@color/backgroundBlack"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/admin"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/admin"
+        app:layout_constraintTop_toBottomOf="@+id/admin" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/enter_sign_password_to_signup_as_admin"
+        android:textSize="20sp"
+        android:textColor="@color/backgroundBlack"
+        android:padding="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/admin"
+        app:layout_constraintEnd_toEndOf="@+id/admin"
+        app:layout_constraintStart_toStartOf="@+id/admin" />
+
+</android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>
