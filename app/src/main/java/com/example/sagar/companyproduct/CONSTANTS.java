@@ -1,4 +1,4 @@
-package com.example.sagar.myapplication;
+package com.example.sagar.companyproduct;
 
 /**
  * Created by SAGAR on 25-04-2018.
@@ -13,4 +13,5 @@ public class CONSTANTS
     public static final String TYPE="TYPE";
     public static final String ADMIN="ADMIN";
     public static final String USER="USER";
+    public static final String USERNAME="USERNAME";
 }

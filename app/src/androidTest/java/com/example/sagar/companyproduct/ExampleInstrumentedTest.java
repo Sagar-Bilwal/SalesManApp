@@ -1,4 +1,4 @@
-package com.example.sagar.myapplication;
+package com.example.sagar.companyproduct;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

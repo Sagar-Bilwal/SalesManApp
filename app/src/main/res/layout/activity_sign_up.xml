@@ -7,7 +7,7 @@
     android:id="@+id/signUp_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sagar.myapplication.UserType">
+    tools:context="com.example.sagar.companyproduct.UserType">
 
 
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
     xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sagar.myapplication.UserType">
+    tools:context="com.example.sagar.companyproduct.UserType">
 
     <info.hoang8f.widget.FButton
         android:id="@+id/admin"

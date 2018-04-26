@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sagar.myapplication.UserType">
+    tools:context="com.example.sagar.companyproduct.UserType">
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/upName"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="52dp"
         android:gravity="center"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -33,7 +33,7 @@
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:gravity="center"
         android:hint="Password"
         android:inputType="textPassword"
@@ -54,7 +54,7 @@
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="136dp"
         android:gravity="center"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
@@ -76,7 +76,7 @@
         android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="252dp"
         android:gravity="center"
         android:paddingBottom="4dp"
         android:shadowColor="@color/backgroundBlack"

@@ -1,4 +1,4 @@
-package com.example.sagar.myapplication;
+package com.example.sagar.companyproduct;
 
 import org.junit.Test;
 

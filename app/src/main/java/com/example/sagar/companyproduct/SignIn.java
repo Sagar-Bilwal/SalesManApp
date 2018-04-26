@@ -1,4 +1,4 @@
-package com.example.sagar.myapplication;
+package com.example.sagar.companyproduct;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
