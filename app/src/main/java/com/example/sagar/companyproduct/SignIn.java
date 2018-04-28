@@ -1,13 +1,84 @@
 package com.example.sagar.companyproduct;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.sagar.companyproduct.model.User;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class SignIn extends AppCompatActivity {
 
+    EditText password,name;
+    Button buttonSignIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        password=(MaterialEditText)findViewById(R.id.inPassword);
+        name=(MaterialEditText)findViewById(R.id.inName);
+        buttonSignIn =findViewById(R.id.buttonSignIn);
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference= firebaseDatabase.getReference("User");
+
+        buttonSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(SignIn.this);
+                progressDialog.setMessage("Loading...");
+                progressDialog.show();
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.child(name.getText().toString()).exists()) {
+                            Log.d("Error", "onDataChange Reached");
+                            progressDialog.dismiss();
+                            User user = dataSnapshot.child(name.getText().toString()).getValue(User.class);
+                            assert user != null;
+                            if (user.getPassword().equals(password.getText().toString())) {
+                                SharedPreferences login=getSharedPreferences(CONSTANTS.Login,MODE_PRIVATE);
+                                login.edit().putBoolean(CONSTANTS.ISLOGIN,true).apply();
+                                Toast.makeText(SignIn.this, "Signed In Successfully", Toast.LENGTH_LONG).show();
+                                SharedPreferences sharedPreferences = getSharedPreferences(CONSTANTS.USER_TYPE, MODE_PRIVATE);
+                                sharedPreferences.edit().putString(CONSTANTS.USERNAME,name.getText().toString()).apply();
+                                sharedPreferences.edit().putString(CONSTANTS.TYPE, user.getUser_Type()).apply();
+                                Intent i2 = new Intent(SignIn.this, AdminActivity.class);
+                                i2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(i2);
+                            } else {
+                                Toast.makeText(SignIn.this, "Enter Correct Password", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(SignIn.this, "Account does not exists", Toast.LENGTH_LONG).show();
+                            progressDialog.dismiss();
+                            Intent i = new Intent(SignIn.this, Login.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
+                        }
+                    }
+
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Toast.makeText(SignIn.this, "Check Your Internet Connection", Toast.LENGTH_SHORT).show();
+                        Log.d("error", "onCancelled Reached");
+                    }
+                });
+            }
+        });
     }
 }

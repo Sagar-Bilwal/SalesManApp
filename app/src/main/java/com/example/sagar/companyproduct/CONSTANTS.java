@@ -14,4 +14,6 @@ public class CONSTANTS
     public static final String ADMIN="ADMIN";
     public static final String USER="USER";
     public static final String USERNAME="USERNAME";
+    public static final String TASK_NO="TASK_NO";
+    public static final String TASK="TASK";
 }

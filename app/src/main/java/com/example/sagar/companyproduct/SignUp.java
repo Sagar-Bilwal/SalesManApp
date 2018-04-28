@@ -39,9 +39,9 @@ public class SignUp extends AppCompatActivity {
                     sharedPreferences.edit().putString(CONSTANTS.TYPE, CONSTANTS.ADMIN).apply();
                     loadFragment(new UserType());
                 }
-                if(password.getText().toString()=="")
+                else if(Objects.equals(password.getText().toString(), ""))
                 {
-                    Toast.makeText(SignUp.this, "Enter the Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "Enter the Password To Sign Up as Administrator", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {

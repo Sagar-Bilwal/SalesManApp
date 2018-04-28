@@ -4,6 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sagar.companyproduct.SignIn">
+    tools:context="com.example.sagar.companyproduct.UserType">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/inName"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:textColor="@color/backgroundBlack"
+        android:textColorHint="@color/backgroundBlack"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:met_baseColor="@color/backgroundBlack"
+        app:met_floatingLabel="highlight"
+        app:met_primaryColor="@color/backgroundBlack"
+        app:met_singleLineEllipsis="true" />
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/inPassword"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:gravity="center"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColor="@color/backgroundBlack"
+        android:textColorHint="@color/backgroundBlack"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/inName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/inName"
+        app:layout_constraintTop_toBottomOf="@+id/inName"
+        app:met_baseColor="@color/backgroundBlack"
+        app:met_floatingLabel="highlight"
+        app:met_primaryColor="@color/backgroundBlack"
+        app:met_singleLineEllipsis="true" />
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/buttonSignIn"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:shadowColor="@color/backgroundBlack"
+        android:text="@string/sign_in"
+        android:textColor="@color/backgroundBlack"
+        android:textSize="20sp"
+        app:cornerRadius="4dp"
+        app:fButtonColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/inName"
+        app:layout_constraintStart_toStartOf="@+id/inName"
+        app:layout_constraintTop_toBottomOf="@+id/inName"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp" />
 
 </android.support.constraint.ConstraintLayout>
+
+

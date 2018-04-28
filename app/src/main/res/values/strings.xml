@@ -10,4 +10,7 @@
     <string name="enter_sign_password_to_signup_as_admin">ENTER SIGN PASSWORD TO SIGNUP AS ADMIN.</string>
     <string name="or">OR</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="title_activity_admin">AdminActivity</string>
 </resources>

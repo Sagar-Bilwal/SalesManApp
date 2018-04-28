@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class Login extends AppCompatActivity
 {
     Button signIn,signUp;
-    TextView slogan;
     public static boolean isLogin;
     SharedPreferences sharedPreferences;
     @Override
@@ -21,10 +20,10 @@ public class Login extends AppCompatActivity
         sharedPreferences = getSharedPreferences(CONSTANTS.Login, MODE_PRIVATE);
         isLogin = sharedPreferences.getBoolean(CONSTANTS.ISLOGIN, false);
         if (isLogin) {
-//            Intent i = new Intent(Login.this, MainActivity.class);
-//            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//            startActivity(i);
-//            finish();
+            Intent i = new Intent(Login.this, AdminActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+            finish();
         } else {
             setContentView(R.layout.activity_login);
             signIn = findViewById(R.id.signIn);
