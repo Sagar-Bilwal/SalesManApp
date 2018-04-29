@@ -6,7 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.sagar.companyproduct.AdminActivity">
 
-    <include layout="@layout/content_admin" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/admin_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

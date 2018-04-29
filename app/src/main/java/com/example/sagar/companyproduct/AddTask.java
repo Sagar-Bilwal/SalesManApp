@@ -43,12 +43,12 @@ public class AddTask extends AppCompatActivity {
                 progressDialog.show();
                 sharedPreferences=getSharedPreferences(name.getText().toString(), Context.MODE_PRIVATE);
                 taskNo=sharedPreferences.getInt(CONSTANTS.TASK_NO,0);
-                final String taskNO=taskNo+"";
+                final String taskNO=taskNo+" "+name.getText().toString();
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        TaskNo Task=new TaskNo(companyName.getText().toString(),address.getText().toString(),contact.getText().toString());
-                        databaseReference.child(name.getText().toString()).child(taskNO).setValue(Task);
+                        TaskNo Task=new TaskNo(companyName.getText().toString(),address.getText().toString(),contact.getText().toString()," "," "," ",name.getText().toString(),taskNo+"");
+                        databaseReference.child(taskNO).setValue(Task);
                         Toast.makeText(AddTask.this, "Saved Successfully", Toast.LENGTH_LONG).show();
                         databaseReference.removeEventListener(this);
                         taskNo=taskNo+1;

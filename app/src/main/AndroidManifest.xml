@@ -27,8 +27,10 @@
         <activity
             android:name=".AdminActivity"
             android:label="@string/title_activity_admin"
-            android:theme="@style/Theme.AppCompat.DayNight"></activity>
-        <activity android:name=".AddTask"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight" />
+        <activity android:name=".AddTask" />
+        <activity android:name=".UserActivity" />
+        <activity android:name=".MainUserActivity"></activity>
     </application>
 
 </manifest>
