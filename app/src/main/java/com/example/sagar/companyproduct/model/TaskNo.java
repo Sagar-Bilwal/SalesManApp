@@ -38,6 +38,16 @@ public class TaskNo
         this.date = date;
     }
 
+    public TaskNo(String companyName, String address, String contact,String status,String reason,String date,String taskNo)
+    {
+        this.companyName = companyName;
+        this.address = address;
+        this.contact = contact;
+        this.status = status;
+        this.reason = reason;
+        this.date = date;
+        this.taskNo = taskNo;
+    }
     public TaskNo(String companyName, String address, String contact,String status,String reason,String date,String name,String taskNo)
     {
         this.companyName = companyName;

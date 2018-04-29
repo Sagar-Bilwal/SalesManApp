@@ -1,5 +1,6 @@
 package com.example.sagar.companyproduct;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -49,6 +50,9 @@ public class AdminActivity extends AppCompatActivity
 
     private void fetchTasks()
     {
+        final ProgressDialog progressDialog = new ProgressDialog(AdminActivity.this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         final DatabaseReference databaseReference=firebaseDatabase.getReference("Tasks");
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -73,6 +77,7 @@ public class AdminActivity extends AppCompatActivity
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                     }
                 }
+                progressDialog.dismiss();
             }
 
             @Override

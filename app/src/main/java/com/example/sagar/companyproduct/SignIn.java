@@ -20,10 +20,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.Objects;
+
 public class SignIn extends AppCompatActivity {
 
     EditText password,name;
     Button buttonSignIn;
+    SharedPreferences sharedPreferences1;
+    String UserType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +60,16 @@ public class SignIn extends AppCompatActivity {
                                 SharedPreferences sharedPreferences = getSharedPreferences(CONSTANTS.USER_TYPE, MODE_PRIVATE);
                                 sharedPreferences.edit().putString(CONSTANTS.USERNAME,name.getText().toString()).apply();
                                 sharedPreferences.edit().putString(CONSTANTS.TYPE, user.getUser_Type()).apply();
-                                Intent i2 = new Intent(SignIn.this, AdminActivity.class);
-                                i2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(i2);
+                                UserType=user.getUser_Type();
+                                if(Objects.equals(UserType, CONSTANTS.ADMIN)) {
+                                    Intent i = new Intent(SignIn.this, AdminActivity.class);
+                                    startActivity(i);
+                                }
+                               else
+                                {
+                                    Intent i = new Intent(SignIn.this, MainUserActivity.class);
+                                    startActivity(i);
+                                }
                             } else {
                                 Toast.makeText(SignIn.this, "Enter Correct Password", Toast.LENGTH_LONG).show();
                             }

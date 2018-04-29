@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sagar.companyproduct.UserInput">
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/user_input_company"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:hint="Company Name"
+            android:padding="4dp"
+            android:textColor="@color/backgroundBlack"
+            android:textColorHint="@color/backgroundBlack"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_input_address"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="Address"
+            android:padding="4dp"
+            android:textColor="@color/backgroundBlack"
+            android:textColorHint="@color/backgroundBlack"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/user_input_company"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/user_input_company"
+            app:layout_constraintTop_toBottomOf="@+id/user_input_company" />
+
+
+        <TextView
+            android:id="@+id/user_input_date"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:hint="Date"
+            android:padding="4dp"
+            android:textColor="@color/backgroundBlack"
+            android:textColorHint="@color/backgroundBlack"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/user_input_company"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/user_input_company"
+            app:layout_constraintTop_toBottomOf="@+id/user_input_company" />
+
+        <TextView
+            android:id="@+id/user_status"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="132dp"
+            android:gravity="center"
+            android:hint="Status"
+            android:padding="4dp"
+            android:textColor="@color/backgroundBlack"
+            android:textColorHint="@color/backgroundBlack"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/user_input_company"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/user_input_company"
+            app:layout_constraintTop_toBottomOf="@+id/user_input_company" />
+
+        <EditText
+            android:id="@+id/user_input_reason"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="244dp"
+            android:gravity="center"
+            android:hint="Specify the reason if the meeting was not Successful"
+            android:padding="4dp"
+            android:textColor="@color/backgroundBlack"
+            android:textColorHint="@color/backgroundBlack"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/user_input_company"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/user_input_company"
+            app:layout_constraintTop_toBottomOf="@+id/user_input_company" />
+
+        <RadioButton
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="188dp"
+            android:textSize="20sp"
+            android:padding="4dp"
+            android:text="Yes"
+            app:layout_constraintEnd_toEndOf="@+id/user_input_company"
+            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintStart_toStartOf="@+id/user_input_company"
+            app:layout_constraintTop_toBottomOf="@+id/user_input_company" />
+
+        <RadioButton
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="188dp"
+            android:textSize="20sp"
+            android:padding="4dp"
+            android:text="No"
+            app:layout_constraintEnd_toEndOf="@+id/user_input_company"
+            app:layout_constraintHorizontal_bias="0.853"
+            app:layout_constraintStart_toStartOf="@+id/user_input_company"
+            app:layout_constraintTop_toBottomOf="@+id/user_input_company" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/user_input_save"
+            android:layout_width="194dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="324dp"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:shadowColor="@color/backgroundBlack"
+            android:text="Save"
+            android:textColor="@color/backgroundBlack"
+            android:textSize="20sp"
+            app:cornerRadius="4dp"
+            app:fButtonColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@+id/user_input_company"
+            app:layout_constraintStart_toStartOf="@+id/user_input_company"
+            app:layout_constraintTop_toBottomOf="@+id/user_input_company"
+            app:shadowEnabled="true"
+            app:shadowHeight="5dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
