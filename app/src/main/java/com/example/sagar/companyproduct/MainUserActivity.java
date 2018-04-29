@@ -85,7 +85,7 @@ public class MainUserActivity extends AppCompatActivity implements UserRecyclerA
         String address=Tasks.get(position).getAddress();
         String contact=Tasks.get(position).getContact();
         String name=Tasks.get(position).getName();
-        Intent intent =new Intent(MainUserActivity.this,AdminActivity.class);
+        Intent intent =new Intent(MainUserActivity.this,UserInput.class);
         Bundle bundle=new Bundle();
         bundle.putString(CONSTANTS.TASK_NO,taskNo);
         bundle.putString("COMPANY",companyName);
