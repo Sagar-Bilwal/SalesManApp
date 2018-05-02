@@ -47,7 +47,7 @@ public class AddTask extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        TaskNo Task=new TaskNo(companyName.getText().toString(),address.getText().toString(),contact.getText().toString()," "," "," ",name.getText().toString(),taskNo+"");
+                        TaskNo Task=new TaskNo(companyName.getText().toString(),address.getText().toString(),contact.getText().toString(),"","","",name.getText().toString(),taskNo+"");
                         databaseReference.child(taskNO).setValue(Task);
                         Toast.makeText(AddTask.this, "Saved Successfully", Toast.LENGTH_LONG).show();
                         databaseReference.removeEventListener(this);

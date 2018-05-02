@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="6dp">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:elevation="16dp"
+        android:elevation="14dp"
         android:fadingEdge="vertical"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,107 +27,185 @@
             android:padding="4dp">
 
             <TextView
-                android:id="@+id/user_company"
-                android:layout_width="350dp"
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:hint="Company Name"
                 android:padding="4dp"
-                android:textColor="@color/backgroundBlack"
-                android:textColorHint="@color/backgroundBlack"
+                android:text="Company Name :"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/user_address"
-                android:layout_width="350dp"
+                android:id="@+id/user_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:hint="Company Name"
+                android:padding="4dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Address :"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/user_company"
+                app:layout_constraintStart_toStartOf="@+id/user_company"
+                app:layout_constraintTop_toBottomOf="@+id/user_company" />
+
+            <TextView
+                android:id="@+id/user_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="48dp"
                 android:gravity="center"
                 android:hint="Address"
                 android:padding="4dp"
-                android:textColor="@color/backgroundBlack"
-                android:textColorHint="@color/backgroundBlack"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/user_company"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/user_company"
+                app:layout_constraintEnd_toEndOf="@+id/textView7"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/user_company" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Contact :"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/user_address"
+                app:layout_constraintStart_toStartOf="@+id/user_address"
+                app:layout_constraintTop_toBottomOf="@+id/user_address" />
 
             <TextView
                 android:id="@+id/user_contact"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
                 android:gravity="center"
+                android:hint="Contact"
                 android:padding="4dp"
-                android:hint="Contact No."
-                android:textColor="@color/backgroundBlack"
-                android:textColorHint="@color/backgroundBlack"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/user_company"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/user_company"
-                app:layout_constraintTop_toBottomOf="@+id/user_company" />
+                app:layout_constraintEnd_toEndOf="@+id/textView12"
+                app:layout_constraintStart_toStartOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="4dp"
+                android:text="Date of Visit :"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/user_contact"
+                app:layout_constraintStart_toStartOf="@+id/user_contact"
+                app:layout_constraintTop_toBottomOf="@+id/user_contact" />
 
             <TextView
                 android:id="@+id/user_date"
-                android:layout_width="350dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="128dp"
-                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
                 android:hint="Date"
                 android:padding="4dp"
-                android:textColor="@color/backgroundBlack"
-                android:textColorHint="@color/backgroundBlack"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/user_company"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/user_company"
-                app:layout_constraintTop_toBottomOf="@+id/user_company" />
+                app:layout_constraintEnd_toEndOf="@+id/textView8"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Status :"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_date" />
 
             <TextView
                 android:id="@+id/user_status"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="184dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center"
                 android:hint="Status"
                 android:padding="4dp"
-                android:textColor="@color/backgroundBlack"
-                android:textColorHint="@color/backgroundBlack"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/user_company"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/user_company"
-                app:layout_constraintTop_toBottomOf="@+id/user_company" />
+                app:layout_constraintEnd_toEndOf="@+id/textView9"
+                app:layout_constraintHorizontal_bias="0.75"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="2dp"
+                android:text="Reason/Order Detail :"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_status" />
 
             <TextView
                 android:id="@+id/user_reason"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="244dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:hint="Reason"
-                android:padding="4dp"
-                android:textColor="@color/backgroundBlack"
-                android:textColorHint="@color/backgroundBlack"
+                android:padding="2dp"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/user_company"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/user_company"
-                app:layout_constraintTop_toBottomOf="@+id/user_company" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

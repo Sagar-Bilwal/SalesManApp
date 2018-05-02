@@ -1,16 +1,17 @@
 package com.example.sagar.companyproduct;
 
-import android.app.DatePickerDialog;
-import android.app.ProgressDialog;
-import android.app.TimePickerDialog;
+import android.annotation.SuppressLint;
+import android.app.*;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -21,8 +22,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
+import android.app.AlarmManager;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Random;
 
@@ -30,15 +32,19 @@ public class UserInput extends AppCompatActivity implements DatePickerDialog.OnD
 
     TextView companyName;
     TextView date;
+    String input;
     TextView address;
     RadioButton yes;
     RadioButton no;
     EditText reason;
-    String taskNo,address1,contact,name,company_name;
+    AlarmManager alarmManager;
+    String taskNo,address1,contact,name,company_name,Reason,Date,Status;
     int final_day ,final_month,final_year;
     Button save;
     String status;
     int year,month,day;
+    Calendar calendar;
+    RadioGroup radioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,32 +85,34 @@ public class UserInput extends AppCompatActivity implements DatePickerDialog.OnD
                 final ProgressDialog progressDialog = new ProgressDialog(UserInput.this);
                 progressDialog.setMessage("Loading...");
                 progressDialog.show();
-                if (no.isChecked())
-                {
+                if (no.isChecked()) {
                     status = "NO";
-                } else if (yes.isChecked())
-                {
+                } else if (yes.isChecked()) {
                     status = "YES";
                 } else {
                     status = " ";
                 }
-                Toast.makeText(UserInput.this, reason.getText().toString(), Toast.LENGTH_SHORT).show();
                 if (no.isChecked() && Objects.equals(reason.getText().toString(), "")) {
                     progressDialog.dismiss();
                     Toast.makeText(UserInput.this, "Enter the Reason(Why was Meeting Unsuccessful ?)", Toast.LENGTH_SHORT).show();
-                } else if (date.getText().toString() == "") {
+                } else if (Objects.equals(date.getText().toString(), "")) {
                     progressDialog.dismiss();
                     Toast.makeText(UserInput.this, "Enter the date of your Visit", Toast.LENGTH_SHORT).show();
-                } else {
+                }else if (yes.isChecked() && Objects.equals(reason.getText().toString(), "")) {
+                    progressDialog.dismiss();
+                    Toast.makeText(UserInput.this, "Enter the Details of the order", Toast.LENGTH_SHORT).show();
+                }
+                else {
                     progressDialog.dismiss();
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            TaskNo Task = new TaskNo(company_name, address1, contact, status, reason.getText().toString()+" ", date.getText().toString(), name, taskNo + "");
-                            databaseReference.child(taskNo+" "+name).setValue(Task);
+                            TaskNo Task = new TaskNo(company_name, address1, contact, status, reason.getText().toString() + " ", date.getText().toString(), name, taskNo + "");
+                            databaseReference.child(taskNo + " " + name).setValue(Task);
                             Toast.makeText(UserInput.this, "Saved Successfully", Toast.LENGTH_LONG).show();
                             databaseReference.removeEventListener(this);
                             Intent intent = new Intent(UserInput.this, MainUserActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }
 
@@ -113,9 +121,16 @@ public class UserInput extends AppCompatActivity implements DatePickerDialog.OnD
                             Toast.makeText(UserInput.this, "Error Occurred,Saving Failed", Toast.LENGTH_LONG).show();
                         }
                     });
+                    Date date_e = new Date(final_year-1900, month, day,7,0);
+                    long epoc = date_e.getTime();
+                    alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+                    Intent intent1 = new Intent(UserInput.this, TaskReceiver.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(UserInput.this, 1, intent1, 0);
+                    alarmManager.setExact(android.app.AlarmManager.RTC_WAKEUP,epoc, pendingIntent);
                 }
             }
-        });
+               });
     }
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {

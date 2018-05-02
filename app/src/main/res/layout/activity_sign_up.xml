@@ -7,6 +7,7 @@
     android:id="@+id/signUp_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundBlack"
     tools:context="com.example.sagar.companyproduct.UserType">
 
 
@@ -27,7 +28,7 @@
         android:layout_marginTop="256dp"
         android:gravity="center"
         android:paddingBottom="4dp"
-        android:shadowColor="@color/backgroundBlack"
+        android:shadowColor="@android:color/white"
         android:text="@string/admin"
         android:textColor="@color/backgroundBlack"
         android:textSize="20sp"
@@ -48,18 +49,18 @@
         android:gravity="center"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/backgroundBlack"
-        android:textColorHint="@color/backgroundBlack"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/admin"
         app:layout_constraintEnd_toEndOf="@+id/admin"
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="@+id/admin"
-        app:met_baseColor="@color/backgroundBlack"
+        app:met_baseColor="@android:color/white"
         app:met_floatingLabel="highlight"
-        app:met_primaryColor="@color/backgroundBlack"
+        app:met_primaryColor="@android:color/white"
         app:met_singleLineEllipsis="true"
-        app:met_textColorHint="@color/backgroundBlack" />
+        app:met_textColorHint="@android:color/white" />
 
     <info.hoang8f.widget.FButton
         android:id="@+id/user"
@@ -69,7 +70,7 @@
         android:layout_marginTop="84dp"
         android:gravity="center"
         android:paddingBottom="4dp"
-        android:shadowColor="@color/backgroundBlack"
+        android:shadowColor="@android:color/white"
         android:text="@string/user"
         android:textColor="@color/backgroundBlack"
         android:textSize="20sp"
@@ -91,7 +92,7 @@
         android:layout_marginTop="24dp"
         android:padding="2dp"
         android:text="@string/or"
-        android:textColor="@color/backgroundBlack"
+        android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/admin"
@@ -108,7 +109,7 @@
         android:layout_marginStart="8dp"
         android:text="@string/enter_sign_password_to_signup_as_admin"
         android:textSize="20sp"
-        android:textColor="@color/backgroundBlack"
+        android:textColor="@android:color/white"
         android:padding="4dp"
         app:layout_constraintBottom_toTopOf="@+id/admin"
         app:layout_constraintEnd_toEndOf="@+id/admin"
